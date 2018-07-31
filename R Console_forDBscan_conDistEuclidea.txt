@@ -1,0 +1,34 @@
+
+R version 3.4.2 (2017-09-28) -- "Short Summer"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R è un software libero ed è rilasciato SENZA ALCUNA GARANZIA.
+Siamo ben lieti se potrai redistribuirlo, ma sotto certe condizioni.
+Scrivi 'license()' o 'licence()' per dettagli su come distribuirlo.
+
+R è un progetto di collaborazione con molti contributi esterni.
+Scrivi 'contributors()' per maggiori informazioni e 'citation()'
+per sapere come citare R o i pacchetti di R nelle pubblicazioni.
+
+Scrivi 'demo()' per una dimostrazione, 'help()' per la guida in linea, o
+'help.start()' per l'help navigabile con browser HTML.
+Scrivi 'q()' per uscire da R.
+
+[R.app GUI 1.70 (7434) x86_64-apple-darwin15.6.0]
+
+[History restored from /Users/ludovicavasile/.Rapp.history]
+
+> setwd("/Users/ludovicavasile/Desktop")
+> df=read.csv("2dataset_ibm_for_R.csv", sep=",", row.names=1)
+> dbscan::kNNdistplot(df, k=2)
+> abline(h=8.2, lty=2)
+> library("fpc")
+> library("factoextra")
+Carico il pacchetto richiesto: ggplot2
+Welcome! Related Books: `Practical Guide To Cluster Analysis in R` at https://goo.gl/13EFCZ
+> set.seed(246)
+> res.fpc <- fpc::dbscan(df, eps=8.2, MinPts=2)
+> fviz_cluster(res.fpc, df, geom="point")
+objc[4485]: Class FIFinderSyncExtensionHost is implemented in both /System/Library/PrivateFrameworks/FinderKit.framework/Versions/A/FinderKit (0x7fff86663c90) and /System/Library/PrivateFrameworks/FileProvider.framework/OverrideBundles/FinderSyncCollaborationFileProviderOverride.bundle/Contents/MacOS/FinderSyncCollaborationFileProviderOverride (0x10cdeccd8). One of the two will be used. Which one is undefined.
+> 
